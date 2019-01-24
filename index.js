@@ -20,10 +20,10 @@ function displayCurrentWeather(json) {
   //render current weather data to the DOM using provided IDs and json from API
   
   var temp = json.main.temp;
-  var low = Math.round(json.main.temp_min * 9/5 - 459.67) + "° F";
-  var high = Math.round(json.main.temp_max * 9/5 - 459.67) + "° F";
-  var humidity = json.main.humidity + "%";
-  var cloud = json.clouds.all + "%";
+  var low = json.main.temp_min;
+  var high = json.main.temp_max;
+  var humidity = json.main.humidity;
+  var cloud = json.clouds.all;
   
   document.getElementById("temp").innerHTML = temp;
   document.getElementById("low").innerText = low;
