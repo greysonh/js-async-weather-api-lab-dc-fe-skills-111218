@@ -1,5 +1,6 @@
 const API_KEY = "&APPID=ffbeeb25cb7d223ae466535b49b0250c"
 var cityName
+const urlParam = "?q=";
 
 function handleFormSubmit(event) {
   //handle submit event
