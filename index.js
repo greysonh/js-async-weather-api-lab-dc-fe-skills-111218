@@ -25,7 +25,7 @@ function displayCurrentWeather(json) {
   var humidity = json.main.humidity + "%";
   var cloud = json.clouds.all + "%";
   
-  document.getElementById("temp").innerHtml = temp;
+  document.getElementById("temp").innerHTML = temp;
   document.getElementById("low").innerText = low;
   document.getElementById("high").innerText = high;
   document.getElementById("humidity").innerText = humidity;
