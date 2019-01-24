@@ -29,7 +29,7 @@ function displayCurrentWeather(json) {
   document.getElementById("low").innerHTML = low;
   document.getElementById("high").innerHTML = high;
   document.getElementById("humidity").innerHTML = humidity;
-  document.getElementById("cloud").innerHTML = cloud;
+  document.getElementById("cloudCover").innerHTML = cloud;
 }
 
 function fetchFiveDayForecast(city) {
