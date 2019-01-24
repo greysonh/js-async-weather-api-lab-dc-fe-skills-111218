@@ -6,8 +6,8 @@ function handleFormSubmit(event) {
   cityName = document.getElementById("city").value;
   cityName = cityName.replace(/ {1,}/g," ").trim();
   cityName = cityName.replace(" ", "+");
-  return cityName;
   console.log(cityName);
+  return cityName;
 }
 
 function fetchCurrentWeather(city) {
