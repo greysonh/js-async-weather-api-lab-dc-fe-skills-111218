@@ -1,17 +1,19 @@
 const API_KEY = "&APPID=ffbeeb25cb7d223ae466535b49b0250c"
 var cityName
-const urlParam = "?q=";
+const param = "?q=";
 
 function handleFormSubmit(event) {
   //handle submit event
   cityName = document.getElementById("city").value;
   cityName = cityName.replace(/ {1,}/g," ").trim();
   cityName = cityName.replace(" ", "+");
+  fetchCurrentWeather(cityName);
+  fetchFiveDayForecast(cityName);
 }
 
 function fetchCurrentWeather(city) {
   //fetch current weather based on city
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}${API_KEY}`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather${param}${city}${API_KEY}`)
     .then(response => response.json())
     .then(json => displayCurrentWeather(json));
 }
@@ -34,7 +36,7 @@ function displayCurrentWeather(json) {
 
 function fetchFiveDayForecast(city) {
   //fetch five day forecast data based on city
-  fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}${API_KEY}`)
+  fetch(`https://api.openweathermap.org/data/2.5/forecast${param}${city}${API_KEY}`)
     .then(response => response.json())
     .then(json => displayFiveDayForecast(json));
 }
@@ -61,8 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("citySubmit").addEventListener("click", function(e) {
     event.preventDefault();
     handleFormSubmit();
-    fetchCurrentWeather(cityName);
-    fetchFiveDayForecast(cityName);
   })
 
 })
