@@ -26,10 +26,10 @@ function displayCurrentWeather(json) {
   var cloud = json.clouds.all;
   
   document.getElementById("temp").innerHTML = temp;
-  document.getElementById("low").innerText = low;
-  document.getElementById("high").innerText = high;
-  document.getElementById("humidity").innerText = humidity;
-  document.getElementById("cloud").innerText = cloud;
+  document.getElementById("low").innerHTML = low;
+  document.getElementById("high").innerHTML = high;
+  document.getElementById("humidity").innerHTML = humidity;
+  document.getElementById("cloud").innerHTML = cloud;
 }
 
 function fetchFiveDayForecast(city) {
