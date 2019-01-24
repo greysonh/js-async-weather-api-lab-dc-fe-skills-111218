@@ -44,7 +44,7 @@ function displayFiveDayForecast(json) {
 document.getElementById("forecast").innerHTML = "";
 
 for (var x of json.list) {
-  var fiveDay = x.dt_txt + ", " + Math.round(x.main.temp * 9/5 - 459.67) + "° F" + ", " + x.main.humidity + "% humidity";
+  var fiveDay = x['dt_txt'] + ", " + Math.round(x.main.temp * 9/5 - 459.67) + "° F" + ", " + x.main.humidity + "% humidity";
   var element = document.createElement("div");
   var text = document.createTextNode(fiveDay);
   element.appendChild(text);
