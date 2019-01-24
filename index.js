@@ -6,13 +6,11 @@ function handleFormSubmit(event) {
   cityName = document.getElementById("city").value;
   cityName = cityName.replace(/ {1,}/g," ").trim();
   cityName = cityName.replace(" ", "+");
-  console.log(cityName);
-  return cityName;
 }
 
 function fetchCurrentWeather(city) {
   //fetch current weather based on city
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}${API_KEY}`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}${API_KEY}`)
     .then(response => response.json())
     .then(json => displayCurrentWeather(json));
 }
@@ -35,7 +33,7 @@ function displayCurrentWeather(json) {
 
 function fetchFiveDayForecast(city) {
   //fetch five day forecast data based on city
-  fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}${API_KEY}`)
+  fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}${API_KEY}`)
     .then(response => response.json())
     .then(json => displayFiveDayForecast(json));
 }
